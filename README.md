@@ -17,7 +17,7 @@ The current structure is:
 
 ```powershell
 git clone https://github.com/frostvandrer/Obsidian-Notes-Manager.git
-cd notes_manager
+cd Obsidian-Notes-Manager\notes_manager
 cargo build --release
 ```
 
