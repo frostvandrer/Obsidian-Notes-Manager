@@ -36,7 +36,7 @@ C:\<PATH TO OBSIDIAN VAULTS\Vaults\Hacking\Labs\HackTheBox\Boxes\Easy\Test
         ./50 - Privilege Escalation
 ```
 
-Since it can be painfull to go to the release directory everytime you want to run the tool, you can create a bat file and add it to a directory that is in the PATH:
+Since it can be painful to go to the release directory every time you want to run the tool, you can create a bat file and add it to a directory that is in the PATH:
 
 ```batch
 "C:\<PATH TO REPO>\Obsidian-Notes-Manager\notes_manager\target\release\notes_manager.exe" %1 %2 %3
@@ -50,4 +50,4 @@ htb new easy Test
 
 ## TODO
 
-- [] Add credentials template functionality
+- [ ] Add credentials template functionality
