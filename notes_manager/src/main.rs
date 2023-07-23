@@ -25,7 +25,7 @@ struct Args {
 
 fn main() {
     // Read config file
-    let config_path: String = String::from("config\\config.json");
+    let config_path: String = String::from("C:\\Users\\patri\\Documents\\Programming projects\\Rust\\Obsidian-Notes-Manager\\notes_manager\\config\\config.json");
     let lab: Lab = read_config(config_path.to_string());
 
     // Parse CLI arguments

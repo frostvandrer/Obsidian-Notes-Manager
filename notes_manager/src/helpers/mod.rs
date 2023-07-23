@@ -10,7 +10,7 @@ pub fn read_config(config_path: String) -> Lab {
 
     let file_contents: String = match file {
         Ok(contents) => contents,
-        Err(error) => panic!("Failed to open the file! {:?}", error)
+        Err(error) => panic!("Failed to open the config file! {:?}", error)
     };
 
     // Deserialize the JSON config file into a "Lab::Lab" structure
