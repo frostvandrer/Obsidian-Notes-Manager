@@ -2,7 +2,7 @@ use std::{fs::{self, File}, io::Write};
 use crate::machine::MachineInfo;
 
 /// Function
-fn add_links(machine: &MachineInfo, files: &[&str; 6]) {
+fn add_links(machine: &MachineInfo, files: &[&str; 5]) {
     let mut link_file_path: String = machine.path.to_owned();
 
     link_file_path.push_str("\\");
@@ -16,15 +16,16 @@ fn add_links(machine: &MachineInfo, files: &[&str; 6]) {
         Err(e) => panic!("Failed to open file: {:?}", e)
     };
 
-    // f.write_all(b"Test").expect("Failed to write to a file!");
+    // Split the path based on "Hacking" for relative Obsidian paths
+    let base: Vec<&str> = machine.lab.path.split("Hacking").collect();
 
     for file in files {
-        let obsidian_path: String = format!("[[Labs/HackTheBox/Boxes/{}/{}/{}|{}]]\n", machine.difficulty, machine.name, file, file);
+        let obsidian_path: String = format!("[[{}/{}/{}/{}|{}]]\n", base.get(1).unwrap(), machine.difficulty, machine.name, file, file);
         f.write_all(obsidian_path.as_bytes()).expect("Failed to write to a file!");
     }
 }
 
-pub fn create_notes(machine: MachineInfo, files: [&str; 6]) {
+pub fn create_notes(machine: MachineInfo, files: [&str; 5]) {
     
     println!("{}", machine.path);
    

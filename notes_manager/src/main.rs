@@ -68,13 +68,12 @@ fn main() {
     let machine: MachineInfo = MachineInfo::new(args.machine_name, lab, level, machine_path);
 
     // Array of filename String slices
-    let files: [&str; 6] = [
+    let files: [&str; 5] = [
         "00 - Credentials",
         "10 - Nmap",
         "20 - Enumeration",
-        "30 - Initial Foothold",
-        "40 - Post-exploitation Enumeration",
-        "50 - Privilege Escalation"
+        "30 - User",
+        "40 - Root"
     ];
 
     create_notes(machine, files);

@@ -8,9 +8,8 @@ The current structure is:
 <MACHINE DIRECTORY>./00 - Credentials
 <MACHINE DIRECTORY>./10 - Nmap
 <MACHINE DIRECTORY>./20 - Enumeration
-<MACHINE DIRECTORY>./30 - Initial Foothold
-<MACHINE DIRECTORY>./40 - Post-exploitation Enumeration
-<MACHINE DIRECTORY>./50 - Privilege Escalation
+<MACHINE DIRECTORY>./30 - User
+<MACHINE DIRECTORY>./40 - Root
 ```
 
 ## How to install
@@ -47,9 +46,8 @@ C:\<PATH TO OBSIDIAN VAULTS\Vaults\Hacking\Labs\HackTheBox\Boxes\Easy\Test
         ./00 - Credentials
         ./10 - Nmap
         ./20 - Enumeration
-        ./30 - Initial Foothold
-        ./40 - Post-exploitation Enumeration
-        ./50 - Privilege Escalation
+        ./30 - User
+        ./40 - Root
 ```
 
 Since it can be painful to go to the release directory every time you want to run the tool, you can create a bat file and add it to a directory that is in the PATH:
