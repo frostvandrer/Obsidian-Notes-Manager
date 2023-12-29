@@ -1,6 +1,6 @@
 # Obsidian-Notes-Manager
 
-This is a simple tool written in `Rust` which creates a simple notes structure when starting a new machine on [Hack The Box](https://www.hackthebox.com/).
+This is a simple tool written in `Rust` which creates a simple notes structure when starting a new machine on [Hack The Box](https://www.hackthebox.com/) or [Vulnlab](https://www.vulnlab.com/).
 
 The current structure is:
 
