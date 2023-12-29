@@ -4,6 +4,7 @@ use lab::Lab;
 use helpers::read_config;
 use machine::{MachineInfo,MachineDifficulty};
 use notes::create_notes;
+use std::io;
 
 mod machine;
 mod lab;
@@ -16,6 +17,9 @@ struct Args {
     /// Command (only supporting "new" for now)
     command: String,
 
+    /// HTB/VL
+    lab: String,
+
     /// Level (easy, medium, hard, insane)
     level: String,
 
@@ -26,7 +30,7 @@ struct Args {
 fn main() {
     // Read config file
     let config_path: String = String::from("C:\\Users\\patri\\Documents\\Programming projects\\Rust\\Obsidian-Notes-Manager\\notes_manager\\config\\config.json");
-    let lab: Lab = read_config(config_path.to_string());
+    let labs: Vec<Lab> = read_config(config_path.to_string());
 
     // Parse CLI arguments
     let args: Args = Args::parse();
@@ -45,6 +49,14 @@ fn main() {
     } else {
         panic!("Invalid machine level was specified!");
     }
+
+     // Find the LabConfig based on the provided lab parameter
+    let lab_config: Result<&Lab, io::Error> = labs
+        .iter()
+        .find(|config| config.name == args.lab)
+        .ok_or_else(|| io::Error::new(io::ErrorKind::Other, "Lab not found"));
+
+    let lab: Lab = lab_config.unwrap().clone();
 
     let mut machine_path: String = lab.path.to_owned();
     

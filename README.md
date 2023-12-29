@@ -15,18 +15,34 @@ The current structure is:
 
 ## How to install
 
-```powershell
+```
 git clone https://github.com/frostvandrer/Obsidian-Notes-Manager.git
 cd Obsidian-Notes-Manager\notes_manager
 cargo build --release
+```
+
+## Usage
+
+```
+Usage: notes_manager.exe <COMMAND> <LAB> <LEVEL> <MACHINE_NAME>
+
+Arguments:
+  <COMMAND>       Command (only supporting "new" for now)
+  <LAB>           HTB/VL
+  <LEVEL>         Level (easy, medium, hard, insane)
+  <MACHINE_NAME>  Machine name
+
+Options:
+  -h, --help     Print help
+  -V, --version  Print version
 ```
 
 ## How to run
 
 Example:
 
-```powershell
-C:\<PATH TO BINARY>\notes_manager.exe new easy Test
+```
+C:\<PATH TO BINARY>\notes_manager.exe new htb easy Test
 C:\<PATH TO OBSIDIAN VAULTS\Vaults\Hacking\Labs\HackTheBox\Boxes\Easy\Test
         ./00 - Credentials
         ./10 - Nmap
@@ -39,15 +55,15 @@ C:\<PATH TO OBSIDIAN VAULTS\Vaults\Hacking\Labs\HackTheBox\Boxes\Easy\Test
 Since it can be painful to go to the release directory every time you want to run the tool, you can create a bat file and add it to a directory that is in the PATH:
 
 ```batch
-"C:\<PATH TO REPO>\Obsidian-Notes-Manager\notes_manager\target\release\notes_manager.exe" %1 %2 %3
+"C:\<PATH TO REPO>\Obsidian-Notes-Manager\notes_manager\target\release\notes_manager.exe" %1 %2 %3 %4
 ```
 
-Name it e.g. `htb`, then just:
+Name it e.g. `labs`, then just:
 
 ```powershell
-htb new easy Test
+labs new htb easy Test
 ```
 
 ## TODO
-
+- [x] Add support for Vulnlab
 - [ ] Add credentials template functionality

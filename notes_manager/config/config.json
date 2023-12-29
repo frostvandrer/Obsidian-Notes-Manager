@@ -1,4 +1,10 @@
-{
-    "name" : "htb",
-    "path": "C:\\Users\\patri\\Documents\\Obsidian\\Vaults\\Hacking\\Labs\\HackTheBox\\Boxes"
-}
+[
+    {
+        "name" : "htb",
+        "path": "C:\\Users\\patri\\Documents\\Obsidian\\Vaults\\Hacking\\Labs\\HackTheBox\\Boxes"
+    },
+    {
+        "name" : "vl",
+        "path": "C:\\Users\\patri\\Documents\\Obsidian\\Vaults\\Hacking\\Labs\\Vulnlab\\New"
+    }
+]

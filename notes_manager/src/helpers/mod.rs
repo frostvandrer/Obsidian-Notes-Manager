@@ -4,7 +4,7 @@ use crate::lab::Lab;
 /// Reads the JSON config file and returns a Lab object to the caller
 /// containing the name of the lab and path to the Obsidian vault
 /// folder where the lab machine's notes are usually stored
-pub fn read_config(config_path: String) -> Lab {
+pub fn read_config(config_path: String) -> Vec<Lab> {
     // Read config file from the file system
     let file: Result<String, std::io::Error> = fs::read_to_string(config_path);
 
@@ -14,7 +14,7 @@ pub fn read_config(config_path: String) -> Lab {
     };
 
     // Deserialize the JSON config file into a "Lab::Lab" structure
-    let json: Lab = serde_json::from_str(&file_contents).expect("JSON error!");
+    let labs: Vec<Lab> = serde_json::from_str(&file_contents).expect("JSON error!");
 
-    return json;
+    return labs;
 }
